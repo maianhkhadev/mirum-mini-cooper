@@ -1,0 +1,56 @@
+.button-redirect {
+  position: relative;
+  transform: perspective(1px) translateZ(0);
+  transition-property: color;
+  transition-duration: 0.3s;
+  color: #fbfaf7;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+  }
+
+  .text {
+    position: relative;
+    padding-right: 2rem;
+
+    &::after {
+      content: url('../images/icon-long-arrow-white-16.png');
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 1rem;
+      height: 1rem;
+      transition: all 0.3s ease-out;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:hover {
+    color: #000000;
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .text {
+
+      &::after {
+        content: url('../images/icon-long-arrow-black-16.png');
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+#page-home {
+
+  .section-07 {
+
+    .tab .tab-links {
+      border: unset;
+      margin-left: 6.25rem;
+    }
+
+    .tab .tab-links .tab-link {
+      border: unset;
+    }
+
+    .slides {
+      display: grid;
+      grid-template-columns: 40% 20% 40%;
+      width: 100%;
+
+      .slide {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 32.5rem;
+
+        &:nth-child(1) {
+          clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+        }
+
+        &:nth-child(2) {
+          clip-path: polygon(34% 0, 100% 0%, 66% 100%, 0% 100%);
+          margin-left: -15rem;
+          margin-right: -15rem;
+        }
+
+        &:nth-child(3) {
+          clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+      }
+    }
+  }
+}
