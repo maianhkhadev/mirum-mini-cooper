@@ -1,0 +1,21 @@
+.block-review-car {
+
+  svg {
+
+    .popover {
+      opacity: 0;
+
+      .popover-text {
+        text-transform: uppercase;
+      }
+
+      &.show {
+        opacity: 1;
+      }
+    }
+
+    .dot {
+      cursor: pointer;
+    }
+  }
+}

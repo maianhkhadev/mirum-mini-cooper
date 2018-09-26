@@ -1,6 +1,8 @@
 @import 'section-01';
 @import 'section-02';
+@import 'section-04';
 @import 'section-05';
+@import 'section-06';
 @import 'section-07';
 @import 'section-08';
 @import 'section-09';
@@ -15,12 +17,14 @@
       color: #000000;
       font-size: 2.5rem;
       text-transform: uppercase;
+      line-height: 1;
     }
 
     h3.section-title {
       color: #000000;
       font-size: 1.875rem;
       text-transform: uppercase;
+      line-height: 1;
     }
 
     .line {

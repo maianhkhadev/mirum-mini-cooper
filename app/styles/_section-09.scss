@@ -1,0 +1,45 @@
+#page-home {
+
+  .section-09 {
+
+    div.deco-01 {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media screen and (min-width: 1200px) {
+        padding-top: 180%;
+        margin-right: -10rem;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-top: 50%;
+        margin-bottom: 2rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding-top: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .col-xl-3 {
+      align-self: center;
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      @media screen and (max-width: 600px) {
+
+        &:last-child {
+
+          .block-feature {
+            margin-bottom: unset;
+          }
+        }
+      }
+    }
+  }
+}
