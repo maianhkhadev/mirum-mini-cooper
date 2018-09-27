@@ -1,0 +1,14 @@
+.block-colors {
+  display: grid;
+  grid-template-columns: 4rem 4rem;
+  font-size: 0;
+
+  figure {
+    cursor: pointer;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+}

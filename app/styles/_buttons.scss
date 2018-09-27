@@ -3,14 +3,15 @@
   transform: perspective(1px) translateZ(0);
   transition-property: color;
   transition-duration: 0.3s;
-  color: #fbfaf7;
-  font-size: 0.875rem;
-  text-transform: uppercase;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 
   .text {
     position: relative;
+    color: #fbfaf7;
+    font-size: 0.875rem;
+    font-family: $mini-sans-serif;
+    text-transform: uppercase;
     padding-right: 2rem;
 
     &::after {
@@ -22,13 +23,21 @@
       height: 1rem;
       transition: all 0.3s ease-out;
       transform: translateY(-50%);
+      margin-top: -0.125rem;
+    }
+  }
+
+  &:hover {
+
+    .text {
+      text-decoration: underline;
     }
   }
 }
 
 html:not(.touch-device) {
 
-  .btn-black {
+  .btn-black-effect {
 
     &::before {
       content: "";
@@ -45,13 +54,14 @@ html:not(.touch-device) {
     }
 
     &:hover {
-      color: #000000;
 
       &::before {
         transform: scaleX(1);
       }
 
       .text {
+        color: #000000;
+        text-decoration: none;
 
         &::after {
           content: url('../images/icon-long-arrow-black-16.png');
@@ -66,14 +76,15 @@ html:not(.touch-device) {
   transform: perspective(1px) translateZ(0);
   transition-property: color;
   transition-duration: 0.3s;
-  color: #000000;
-  font-size: 0.875rem;
-  text-transform: uppercase;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 
   .text {
     position: relative;
+    color: #000000;
+    font-size: 0.875rem;
+    font-family: $mini-sans-serif;
+    text-transform: uppercase;
     padding-right: 2rem;
 
     &::after {

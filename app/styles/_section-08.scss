@@ -2,10 +2,6 @@
 
   .section-08 {
 
-    .line {
-      margin-bottom: 2.5rem;
-    }
-
     img.brand {
       max-width: 100%;
       height: auto;
@@ -13,21 +9,35 @@
       margin-bottom: 2rem;
     }
 
-    p {
-      color: #000000;
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    img.cover {
-      max-width: 100%;
-      height: auto;
+    div.im-01 {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       margin-bottom: 1.875rem;
+
+      @media screen and (min-width: 1200px) {
+        padding-top: 56%;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-top: 110%;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding-top: 75%;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
     }
 
-    .button-redirect {
+    a.btn-black {
       padding-left: 4.5rem;
       padding-right: 4.5rem;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+        margin-top: 2rem;
+      }
     }
   }
 }

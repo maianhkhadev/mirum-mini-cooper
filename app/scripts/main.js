@@ -28,36 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   // Set active color
-  // let color = document.querySelector('.section-06 .block-colors figure')
-  // color.classList.add('active')
-  //
-  // let colors = document.querySelectorAll('.section-06 .block-colors figure')
-  // dots.forEach(function(dot) {
-  // })
+  let color = document.querySelector('.section-06 .block-colors figure')
+  color.classList.add('active')
 
-  //init same height
-  let elements = document.querySelectorAll('[data-same-height-with]')
-  elements.forEach(function(element) {
-    element.dataset.fdafa = true
+  let colors = document.querySelectorAll('.section-06 .block-colors figure')
+  dots.forEach(function(dot) {
   })
-  elements.forEach(function(element) {
 
-    if(element.dataset.fdafa === "true") {
-
-      let name = element.dataset.sameHeightWith
-      let doms = document.querySelectorAll(`[data-same-height-with="${name}"]`)
-      console.log(doms)
-      let maxHeight = 0;
-      doms.forEach(function(dom) {
-        if(dom.clientHeight > maxHeight) {
-          maxHeight = dom.clientHeight
-        }
-      })
-
-      doms.forEach(function(dom) {
-        dom.style.height = `${maxHeight}px`
-        dom.dataset.fdafa = false
-      })
-    }
-  })
+  AOS.init()
 })

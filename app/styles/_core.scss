@@ -36,3 +36,24 @@ a {
 .w-100 {
   width: 100%;
 }
+
+.order-xs-1 {
+
+  @media screen and (max-width: 600px) {
+    order: 1;
+  }
+}
+
+.order-xs-2 {
+
+  @media screen and (max-width: 600px) {
+    order: 2;
+  }
+}
+
+.order-xs-3 {
+
+  @media screen and (max-width: 600px) {
+    order: 3;
+  }
+}

@@ -25,6 +25,7 @@
     h4.block-title {
       color: #000000;
       font-size: 1.5rem;
+      font-family: $mini-serif;
       transform: uppercase;
       line-height: 1;
     }
@@ -32,8 +33,8 @@
     p {
       color: #000000;
       font-size: 1rem;
+      font-family: $mini-serif;
       line-height: 1.5;
-      margin-bottom: unset;
     }
 
     .vertical-line {
@@ -46,13 +47,13 @@
 
   .block-footer {
 
-    .button-redirect {
+    .btn-black {
       display: block;
 
       @media screen and (min-width: 400px) and (max-width: 700px) {
         .text {
           padding-right: 0;
-          
+
           &:after {
             display: none;
           }
