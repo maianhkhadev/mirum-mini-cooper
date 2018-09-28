@@ -1,0 +1,20 @@
+.block-price {
+  display: inline-block;
+  border: 1px solid #d6d6d6;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+
+  .label {
+    display: block;
+    font-size: #000000;
+    font-size: 0.75rem;
+    font-family: $mini-sans-serif;
+    margin-bottom: 0.25rem;
+  }
+
+  .value {
+    font-size: #000000;
+    font-size: 1.75rem;
+    font-family: $mini-serif;
+  }
+}

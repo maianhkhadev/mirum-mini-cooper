@@ -1,10 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  $('.section-01 .slick').slick({
+  $('.section-01 .slick-01').slick({
+    dots: true,
+    arrows: true,
+    vertical: true,
+    verticalSwiping: true,
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
+    asNavFor: '.section-01 .slick-02'
+  })
+
+  $('.section-01 .slick-02').slick({
     dots: false,
     arrows: false,
-    vertical: true,
-    verticalSwiping: true
+    fade: true,
+    draggable: false,
+    asNavFor: '.section-01 .slick-01'
   })
 
   $('.section-03 .slick').slick({
@@ -28,12 +39,36 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   // Set active color
-  let color = document.querySelector('.section-06 .block-colors figure')
+  let color = document.querySelector('.section-06 .block-colors .color')
   color.classList.add('active')
 
-  let colors = document.querySelectorAll('.section-06 .block-colors figure')
-  dots.forEach(function(dot) {
+  let colors = document.querySelectorAll('.section-06 .block-colors .color')
+  colors.forEach(function(color) {
+    color.addEventListener('click', function() {
+
+      let imCarUrl = color.dataset.imCarUrl
+      beforeSelectCarColor()
+      onSelectCarColor(imCarUrl)
+      color.classList.add('active')
+    })
   })
 
   AOS.init()
 })
+
+function beforeSelectCarColor() {
+  let colors = document.querySelectorAll('.section-06 .block-colors .color')
+  colors.forEach(function(color) {
+    color.classList.remove('active')
+  })
+}
+
+function onSelectCarColor(imCarUrl) {
+  let imCar = document.querySelector('.section-06 .im-car')
+
+  if(imCar === null) {
+    return
+  }
+
+  imCar.setAttribute('src', imCarUrl)
+}

@@ -1,5 +1,47 @@
 #page-home {
 
   .section-06 {
+
+    .im-01 {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media screen and (min-width: 1200px) {
+        padding-top: 100%;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-top: 135%;
+        margin-left: -1rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding-top: 175%;
+        margin-left: -1rem;
+      }
+    }
+
+    .im-car {
+      margin-left: -6rem;
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        width: calc(100% + 6rem);
+        margin-left: -6rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: calc(100% + 50vw);
+        margin-left: -50vw;
+      }
+    }
+
+    .btn-black {
+      margin-top: 2rem;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
+    }
   }
 }

@@ -1,0 +1,52 @@
+#page-home {
+
+  .section-01 {
+
+    .offset-xl-1 {
+      margin-right: 8.333333%;
+    }
+
+    .slick {
+
+      .slick-prev {
+        left: -1.5rem;
+        top: 32%;
+        transform: translateX(-50%);
+      }
+
+      .slick-next {
+        left: -1.5rem;
+        right: unset;
+        top: unset;
+        bottom: 32%;
+        transform: translateX(-50%);
+      }
+
+      .slick-dots {
+        left: -2.375rem;
+        bottom: 50%;
+        transform: translateY(50%);
+
+        li {
+          display: block;
+          height: 1.875rem;
+
+          button {
+            height: 1.875rem;
+
+            &::before {
+              height: 1.875rem;
+              font-size: 0.625rem;
+              line-height: 1.875rem;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-black {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
