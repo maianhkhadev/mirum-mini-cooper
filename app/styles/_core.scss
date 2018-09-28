@@ -61,3 +61,10 @@ a {
     order: 3;
   }
 }
+
+.order-xs-4 {
+
+  @media screen and (max-width: 600px) {
+    order: 4;
+  }
+}

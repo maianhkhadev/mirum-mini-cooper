@@ -1,6 +1,116 @@
 #page-home {
 
   .section-04 {
-    
+
+    .tab {
+      margin-top: 1.5rem;
+
+      .tab-links {
+        margin-bottom: unset;
+
+        .tab-link {
+          padding: 1.25rem 2.5rem;
+        }
+      }
+      .tab-contents {
+
+        .tab-content {
+          border: 1px solid #dee2e6;
+          border-top: unset;
+          padding: 2.5rem 1.25rem 1.25rem;
+
+          p {
+            color: #959595;
+            font-size: 1rem;
+            font-family: $mini-serif;
+            line-height: 2.25;
+          }
+
+          .selectize-control, .selectize-input {
+            display: inline;
+          }
+
+          .selectize-input {
+            padding-right: 2rem;
+          }
+
+          hr {
+            margin-top: 1.75rem;
+            margin-bottom: 1.25rem;
+          }
+
+          a {
+            color: #000000;
+            font-size: 1rem;
+            font-family: $mini-sans-serif;
+          }
+        }
+      }
+    }
+
+    div.im-01 {
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media screen and (min-width: 1200px) {
+        padding-top: 56%;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-top: 110%;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding-top: 75%;
+      }
+    }
+
+    .block-info {
+      position: absolute;
+      left: 2.5rem;
+      bottom: 1.75rem;
+      color: #ffffff;
+
+      h1.block-title {
+        color: #ffffff;
+        font-size: 5rem;
+        font-family: $mini-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        sup {
+          vertical-align: super;
+          font-size: 2.5rem;
+        }
+      }
+
+      h2.block-title {
+        color: #ffffff;
+        font-size: 2.25rem;
+        font-family: $mini-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      h4.block-title {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-family: $mini-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .line {
+        background-color: #ffffff;
+      }
+    }
+
+    .btn-black {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-top: 2rem;
+    }
   }
 }

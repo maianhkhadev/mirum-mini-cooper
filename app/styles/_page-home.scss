@@ -1,5 +1,6 @@
 @import 'section-01';
 @import 'section-02';
+@import 'section-03';
 @import 'section-04';
 @import 'section-05';
 @import 'section-06';
@@ -43,6 +44,10 @@
       font-size: 1rem;
       font-family: $mini-serif;
       line-height: 1.6;
+
+      strong {
+        font-weight: 700;
+      }
     }
   }
 }

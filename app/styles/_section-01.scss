@@ -8,24 +8,33 @@
 
     .slick {
 
-      .slick-prev {
-        left: -1.5rem;
-        top: 32%;
-        transform: translateX(-50%);
+      @media screen and (max-width: 600px) {
+        margin-bottom: 1.75rem;
       }
 
-      .slick-next {
-        left: -1.5rem;
-        right: unset;
-        top: unset;
-        bottom: 32%;
-        transform: translateX(-50%);
+      .slide {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media screen and (min-width: 1200px) {
+          padding-top: 55%;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+          padding-top: 90%;
+        }
+
+        @media screen and (max-width: 600px) {
+          padding-top: 55%;
+        }
+      }
+
+      .slick-prev, .slick-next {
+        z-index: 1000;
       }
 
       .slick-dots {
-        left: -2.375rem;
-        bottom: 50%;
-        transform: translateY(50%);
 
         li {
           display: block;
@@ -44,9 +53,75 @@
       }
     }
 
+    .slick-01 {
+
+      .slick-slide {
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .slick-prev {
+        left: -1.5rem;
+        top: 32%;
+        transform: translateX(-50%);
+      }
+
+      .slick-next {
+        left: -1.5rem;
+        right: unset;
+        top: unset;
+        bottom: 32%;
+        transform: translateX(-50%);
+      }
+
+      .slick-dots {
+        left: -2.375rem;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+
+    .slick-02 {
+
+      .slick-slide {
+
+        @media screen and (max-width: 600px) {
+          padding-right: 1rem;
+        }
+      }
+
+      .slick-prev {
+        left: unset;
+        right: -0.5rem;
+        top: 6%;
+        transform: translateX(-50%);
+      }
+
+      .slick-next {
+        right: -0.5rem;
+        top: unset;
+        bottom: 6%;
+        transform: translateX(-50%);
+      }
+
+      .slick-dots {
+        left: 0;
+        bottom: 50%;
+        transform: translate(calc(100% - 2rem), 50%);
+      }
+    }
+
     .btn-black {
       margin-top: 2rem;
       margin-bottom: 4rem;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+        margin-bottom: unset;
+      }
     }
   }
 }

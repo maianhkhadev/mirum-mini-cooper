@@ -2,19 +2,29 @@
 
   .section-07 {
 
-    .tab .tab-links {
-      border: unset;
-      margin-left: 6.25rem;
-    }
+    .slide-link {
+      color: #000000;
+      font-size: 0.875rem;
+      font-family: $mini-sans-serif;
+      text-transform: uppercase;
+      margin-right: 2.5rem;
+      cursor: pointer;
 
-    .tab .tab-links .tab-link {
-      border: unset;
+      &.active {
+        color: rgba(#000000, 0.5);
+        pointer-events: none;
+      }
     }
 
     .slides {
       display: grid;
       grid-template-columns: 40% 20% 40%;
       width: 100%;
+      margin-top: 1.5rem;
+
+      &.out {
+        transform: translateX(-100);
+      }
 
       .slide {
         background-position: center;
@@ -35,6 +45,22 @@
         &:nth-child(3) {
           clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
+      }
+    }
+
+    .progress {
+      position: relative;
+      background-color: #d7d8d9;
+      width: 100%;
+      height: 0.125rem;
+      margin-top: 2.5rem;
+
+      .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        height: 0.125rem;
       }
     }
   }
