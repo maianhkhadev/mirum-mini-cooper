@@ -46,7 +46,7 @@
         .dot-01 {
           left: 5rem;
 
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 1200px) {
             display: none;
           }
         }
@@ -58,7 +58,7 @@
         .dot-03 {
           right: 10rem;
 
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 1200px) {
             display: none;
           }
         }
