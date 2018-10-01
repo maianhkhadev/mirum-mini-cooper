@@ -7,8 +7,11 @@
 @import 'section-07';
 @import 'section-08';
 @import 'section-09';
+@import 'modal-video';
 
 #page-home {
+  width: 100vw;
+  overflow-x: hidden;
 
   section {
     padding-top: 4rem;

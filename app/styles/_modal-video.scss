@@ -1,0 +1,34 @@
+#page-home {
+
+  .modal-video {
+    width: 1000px;
+    background-color: transparent;
+    border-width: 0;
+
+    @media screen and (max-width: 600px) {
+      width: calc(100% - 2rem);
+    }
+
+    .modal-header {
+      text-align: right;
+
+      .close {
+        color: #ffffff;
+        background-color: transparent;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        border-width: 0;
+        cursor: pointer;
+
+        &:focus {
+          outline: unset;
+        }
+      }
+    }
+
+    .modal-content {
+      padding: 0;
+    }
+  }
+}

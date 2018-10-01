@@ -16,43 +16,91 @@
       }
     }
 
-    .slides {
-      display: grid;
-      grid-template-columns: 40% 20% 40%;
-      width: 100%;
+    .slick {
       margin-top: 1.5rem;
 
-
       @media screen and (max-width: 600px) {
-        width: 100%;
-        overflow: hidden;
-      }
-
-      &.out {
-        transform: translateX(-100);
+        margin-left: -1rem;
+        margin-right: -1rem;
       }
 
       .slide {
+        position: relative;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         height: 32.5rem;
 
-        &:nth-child(1) {
-          clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+        @media screen and (max-width: 600px) {
+
         }
 
-        &:nth-child(2) {
-          clip-path: polygon(34% 0, 100% 0%, 66% 100%, 0% 100%);
-          margin-left: -15rem;
-          margin-right: -15rem;
+        [class*='dot-'] {
+          position: absolute;
+          top: 50%;
+          width: 3.25rem;
+          height: 3.25rem;
+          cursor: pointer;
         }
 
-        &:nth-child(3) {
-          clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+        .dot-01 {
+          left: 5rem;
+
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+
+        .dot-02 {
+          left: calc(50% - 10rem);
+        }
+
+        .dot-03 {
+          right: 10rem;
+
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
         }
       }
     }
+
+    // .slides {
+    //   display: grid;
+    //   grid-template-columns: 40% 20% 40%;
+    //   width: 100%;
+    //   margin-top: 1.5rem;
+    //
+    //
+    //   @media screen and (max-width: 600px) {
+    //     // grid-template-columns: 30% 40% 30%;
+    //   }
+    //
+    //   // .slide {
+    //   //   background-position: center;
+    //   //   background-repeat: no-repeat;
+    //   //   background-size: cover;
+    //   //   height: 32.5rem;
+    //   //
+    //   //   @media screen and (max-width: 600px) {
+    //   //     height: 20rem;
+    //   //   }
+    //   //
+    //   //   &:nth-child(1) {
+    //   //     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+    //   //   }
+    //   //
+    //   //   &:nth-child(2) {
+    //   //     clip-path: polygon(34% 0, 100% 0%, 66% 100%, 0% 100%);
+    //   //     margin-left: -15rem;
+    //   //     margin-right: -15rem;
+    //   //   }
+    //   //
+    //   //   &:nth-child(3) {
+    //   //     clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+    //   //   }
+    //   // }
+    // }
 
     .progress {
       position: relative;

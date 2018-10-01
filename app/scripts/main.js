@@ -1,5 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+  $('.section-01 .slick-01').slick({
+    dots: true,
+    arrows: true,
+    vertical: true,
+    verticalSwiping: true,
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
+    asNavFor: '.section-01 .slick-02',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: false,
+          arrows: false,
+          vertical: false,
+          verticalSwiping: false,
+        }
+      }
+    ]
+  })
+
+  $('.section-01 .slick-02').slick({
+    dots: false,
+    arrows: false,
+    fade: true,
+    draggable: false,
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
+    asNavFor: '.section-01 .slick-01',
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          dots: true,
+          arrows: true,
+        }
+      }
+    ]
+  })
+
+  $('.section-03 .slick').slick({
+    dots: false,
+    arrows: false,
+    variableWidth: true
+  })
+
+  $('.section-07 .slick').slick({
+    dots: false,
+    arrows: false,
+    draggable: false
+  })
+
+  $('.section-04 select').selectize()
+
   let progressBar = document.querySelector('.section-07 .progress-bar')
   progressBar.percentWidth = 0
   setInterval(function() {
@@ -55,60 +109,23 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
-  AOS.init()
+  loadedSection07()
 
-  $('.section-04 select').selectize()
-
-  $('.section-03 .slick').slick({
-    dots: false,
-    arrows: false,
-    variableWidth: true
-  })
-
-  $('.section-07 .slick').slick({
-    dots: false,
-    arrows: false,
-    draggable: false
-  })
-
-  $('.section-01 .slick-01').slick({
-    dots: true,
-    arrows: true,
-    vertical: true,
-    verticalSwiping: true,
-    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
-    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
-    asNavFor: '.section-01 .slick-02',
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          dots: false,
-          arrows: false,
-        }
-      }
-    ]
-  })
-
-  $('.section-01 .slick-02').slick({
-    dots: false,
-    arrows: false,
-    fade: true,
-    draggable: false,
-    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
-    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
-    asNavFor: '.section-01 .slick-01',
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          dots: true,
-          arrows: true,
-        }
-      }
-    ]
+  AOS.init({
+    offset: 0,
+    duration: 500,
+    easing: 'ease-in'
   })
 })
+
+function loadedSection07() {
+  let dots = document.querySelectorAll('.section-07 [class*="dot-"]')
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      uiKit.Modal.show('.modal-video')
+    })
+  })
+}
 
 function onSlidesMove() {
   let progressBar = document.querySelector('.section-07 .progress-bar')

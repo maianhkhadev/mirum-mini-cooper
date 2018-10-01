@@ -1,5 +1,9 @@
 .block-review-car {
 
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 2rem;
+  }
+
   svg {
 
     .popover {
