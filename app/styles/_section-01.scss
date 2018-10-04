@@ -1,7 +1,7 @@
 #page-home {
 
   .section-01 {
-
+    
     .offset-xl-1 {
       margin-right: 8.333333%;
     }
@@ -44,9 +44,27 @@
             height: 1.875rem;
 
             &::before {
-              height: 1.875rem;
+              content: '';
+              top: 50%;
+              left: 50%;
+              width: 0.75rem;
+              height: 0.75rem;
+              transform: translate(-50%, -50%);
               font-size: 0.625rem;
               line-height: 1.875rem;
+              border: 0.125rem solid #000000;
+              border-radius: 50%;
+              opacity: 1;
+            }
+          }
+
+          &.slick-active {
+
+            button {
+
+              &::before {
+                background-color: #000000;
+              }
             }
           }
         }
@@ -54,6 +72,11 @@
     }
 
     .slick-01 {
+
+      @media screen and (max-width: 600px) {
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
 
       .slick-slide {
 
@@ -64,21 +87,21 @@
       }
 
       .slick-prev {
-        left: -1.5rem;
-        top: 32%;
+        left: -1.563rem;
+        top: 30%;
         transform: translateX(-50%);
       }
 
       .slick-next {
-        left: -1.5rem;
+        left: -1.563rem;
         right: unset;
         top: unset;
-        bottom: 32%;
+        bottom: 30%;
         transform: translateX(-50%);
       }
 
       .slick-dots {
-        left: -2.375rem;
+        left: -2.5rem;
         bottom: 50%;
         transform: translateY(50%);
       }
@@ -111,6 +134,10 @@
         left: 0;
         bottom: 50%;
         transform: translate(calc(100% - 2rem), 50%);
+
+        @media screen and (max-width: 350px) {
+          left: -0.3571rem;
+        }
       }
     }
 

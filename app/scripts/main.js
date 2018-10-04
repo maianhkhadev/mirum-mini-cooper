@@ -46,40 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     variableWidth: true
   })
 
-  $('.section-07 .slick').slick({
-    dots: false,
-    arrows: false,
-    draggable: false
-  })
-
-  $('.section-04 select').selectize()
-
-  let progressBar = document.querySelector('.section-07 .progress-bar')
-  progressBar.percentWidth = 0
-  setInterval(function() {
-
-    if(progressBar.percentWidth === 100) {
-      onSlidesMove()
-    }
-
-    progressBar.percentWidth += 0.5
-    progressBar.style.width = `${progressBar.percentWidth}%`
-  }, 25)
-
-  let slideLinks = document.querySelectorAll('.section-07 .slide-link')
-  slideLinks.forEach(function(slideLink) {
-    slideLink.addEventListener('click', function(e) {
-      e.preventDefault()
-
-      slideLinks.forEach(function(element) {
-        element.classList.remove('active')
-      })
-      slideLink.classList.add('active')
-
-      onSlidesMove()
-    })
-  })
-
   let dots = document.querySelectorAll('.section-03 svg .dot')
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
@@ -109,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
+  // loadedSection04()
   loadedSection07()
 
   AOS.init({
@@ -118,16 +85,86 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 })
 
-function loadedSection07() {
-  let dots = document.querySelectorAll('.section-07 [class*="dot-"]')
-  dots.forEach(function(dot) {
-    dot.addEventListener('click', function() {
-      uiKit.Modal.show('.modal-video')
-    })
+function loadedSection04() {
+
+  $('.section-04 select').selectize({
+    onChange: function() {
+      calcCarFee()
+    }
   })
+
+  calcCarFee()
 }
 
-function onSlidesMove() {
+function loadedSection07() {
+
+  $('.section-07 .slick').slick({
+    dots: false,
+    arrows: false,
+    draggable: false,
+    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: '30%',
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          centerMode: false
+        }
+      }
+    ]
+  })
+
+  let slickPrevLink = document.querySelector('.section-07 .icon-arrow-left')
+  slickPrevLink.addEventListener('click', function() {
+    onSlidesPrev()
+  })
+
+  let slickNextLink = document.querySelector('.section-07 .icon-arrow-right')
+  slickNextLink.addEventListener('click', function() {
+    onSlidesNext()
+  })
+
+  let progressBar = document.querySelector('.section-07 .progress-bar')
+  progressBar.percentWidth = 0
+  setInterval(function() {
+
+    if(progressBar.percentWidth === 100) {
+      onSlidesNext()
+    }
+
+    progressBar.percentWidth += 0.5
+    progressBar.style.width = `${progressBar.percentWidth}%`
+  }, 25)
+
+  // let dots = document.querySelectorAll('.section-07 [class*="dot-"]')
+  // dots.forEach(function(dot) {
+  //   dot.addEventListener('click', function() {
+  //     uiKit.Modal.show('.modal-video')
+  //   })
+  // })
+}
+
+function calcCarFee() {
+  let value = 0
+  let selects = document.querySelectorAll('.section-04 .show select')
+  selects.forEach(function(select) {
+    value += parseInt(select.value)
+  })
+
+  let valueElement = document.querySelector('.section-04 .block-info .value')
+  valueElement.innerHTML = value.toFixed(2);
+}
+
+function onSlidesPrev() {
+  let progressBar = document.querySelector('.section-07 .progress-bar')
+  progressBar.percentWidth = 0
+  progressBar.style.width = 0;
+
+  $('.section-07 .slick').slick('slickPrev')
+}
+
+function onSlidesNext() {
   let progressBar = document.querySelector('.section-07 .progress-bar')
   progressBar.percentWidth = 0
   progressBar.style.width = 0;

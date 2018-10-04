@@ -2,104 +2,106 @@
 
   .section-07 {
 
-    .slide-link {
-      color: #000000;
-      font-size: 0.875rem;
-      font-family: $mini-sans-serif;
-      text-transform: uppercase;
-      margin-right: 2.5rem;
-      cursor: pointer;
+    .tab-links {
+      border: unset;
+      margin-bottom: 1.25rem;
 
-      &.active {
-        color: rgba(#000000, 0.5);
-        pointer-events: none;
+      .tab-link {
+        color: #000000;
+        font-size: 0.875rem;
+        font-family: $mini-sans-serif;
+        text-transform: uppercase;
+        border: unset;
+        padding-left: unset;
+        margin-right: 2.5rem;
+        cursor: pointer;
+
+        &.active {
+          color: rgba(#000000, 0.5);
+          pointer-events: none;
+        }
       }
+    }
+
+    .furniture {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 35rem;
     }
 
     .slick {
-      margin-top: 1.5rem;
 
-      @media screen and (max-width: 600px) {
-        margin-left: -1rem;
-        margin-right: -1rem;
+      .slick-active {
+        position: relative;
+        z-index: 1000;
       }
 
-      .slide {
-        position: relative;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 32.5rem;
+      .slick-item {
+        transform: skewX(-25deg);
+        border-left: 0.25rem solid #ffffff;
+        border-right: 0.25rem solid #ffffff;
+        overflow: hidden;
 
-        @media screen and (max-width: 600px) {
-
-        }
-
-        [class*='dot-'] {
-          position: absolute;
-          top: 50%;
-          width: 3.25rem;
-          height: 3.25rem;
-          cursor: pointer;
-        }
-
-        .dot-01 {
-          left: 5rem;
-
-          @media screen and (max-width: 1200px) {
-            display: none;
-          }
-        }
-
-        .dot-02 {
-          left: calc(50% - 10rem);
-        }
-
-        .dot-03 {
-          right: 10rem;
-
-          @media screen and (max-width: 1200px) {
-            display: none;
-          }
+        .slide {
+          position: relative;
+          transform: skewX(25deg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 32.5rem;
+          margin-left: -32%;
+          margin-right: -32%;
         }
       }
     }
-
-    // .slides {
-    //   display: grid;
-    //   grid-template-columns: 40% 20% 40%;
-    //   width: 100%;
+    // .slick {
     //   margin-top: 1.5rem;
     //
-    //
     //   @media screen and (max-width: 600px) {
-    //     // grid-template-columns: 30% 40% 30%;
+    //     margin-left: -1rem;
+    //     margin-right: -1rem;
     //   }
     //
-    //   // .slide {
-    //   //   background-position: center;
-    //   //   background-repeat: no-repeat;
-    //   //   background-size: cover;
-    //   //   height: 32.5rem;
-    //   //
-    //   //   @media screen and (max-width: 600px) {
-    //   //     height: 20rem;
-    //   //   }
-    //   //
-    //   //   &:nth-child(1) {
-    //   //     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
-    //   //   }
-    //   //
-    //   //   &:nth-child(2) {
-    //   //     clip-path: polygon(34% 0, 100% 0%, 66% 100%, 0% 100%);
-    //   //     margin-left: -15rem;
-    //   //     margin-right: -15rem;
-    //   //   }
-    //   //
-    //   //   &:nth-child(3) {
-    //   //     clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
-    //   //   }
-    //   // }
+    //   .slide {
+    //     position: relative;
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     height: 32.5rem;
+    //
+    //     @media screen and (max-width: 600px) {
+    //
+    //     }
+    //
+    //     [class*='dot-'] {
+    //       position: absolute;
+    //       top: 50%;
+    //       width: 3.25rem;
+    //       height: 3.25rem;
+    //       cursor: pointer;
+    //     }
+    //
+    //     .dot-01 {
+    //       left: 5rem;
+    //
+    //       @media screen and (max-width: 1200px) {
+    //         display: none;
+    //       }
+    //     }
+    //
+    //     .dot-02 {
+    //       left: calc(50% - 10rem);
+    //     }
+    //
+    //     .dot-03 {
+    //       right: 10rem;
+    //
+    //       @media screen and (max-width: 1200px) {
+    //         display: none;
+    //       }
+    //     }
+    //   }
     // }
 
     .progress {
@@ -115,6 +117,22 @@
         left: 0;
         background-color: #000000;
         height: 0.125rem;
+      }
+
+      .icon-arrow {
+        position: absolute;
+        top: 0;
+        width: 1rem;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        &.icon-arrow-left {
+          left: -2rem;
+        }
+
+        &.icon-arrow-right {
+          right: -2rem;
+        }
       }
     }
   }

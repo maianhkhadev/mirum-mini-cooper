@@ -17,7 +17,7 @@
     &::after {
       content: url('../images/icon-long-arrow-white-16.png');
       position: absolute;
-      top: 50%;
+      top: calc(50% + 1px);
       right: 0;
       width: 1rem;
       height: 1rem;
@@ -90,7 +90,7 @@ html:not(.touch-device) {
     &::after {
       content: url('../images/icon-long-arrow-black-16.png');
       position: absolute;
-      top: 50%;
+      top: calc(50% + 1px);
       right: 0;
       width: 1rem;
       height: 1rem;

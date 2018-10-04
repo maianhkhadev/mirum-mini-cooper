@@ -1,6 +1,20 @@
 .block-mode {
   margin-bottom: 3.5rem;
 
+  &.block-mobile {
+
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+  }
+
+  &.block-desktop {
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
   img.thumbnail {
     max-width: 100%;
     height: auto;
@@ -46,6 +60,7 @@
       font-size: 1.875rem;
       font-family: $mini-serif;
       font-weight: 500;
+      text-transform: uppercase;
     }
 
     .line {
@@ -81,7 +96,6 @@
 
       strong {
         font-weight: 700;
-        text-transform: uppercase;
       }
 
       &:last-child {

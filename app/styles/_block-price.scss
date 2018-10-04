@@ -16,5 +16,10 @@
     font-size: #000000;
     font-size: 1.75rem;
     font-family: $mini-serif;
+
+    sup {
+      vertical-align: super;
+      font-size: 1.25rem;
+    }
   }
 }
