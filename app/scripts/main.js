@@ -95,19 +95,12 @@ function loadedSection07() {
     arrows: false,
     swipe: false,
     draggable: false,
-    slidesToShow: 1,
-    centerMode: true,
-    centerPadding: '30%',
+    slidesToShow: 2,
     responsive: [
       {
-        breakpoint: 1200,
-        settings: {
-          centerPadding: '20%'
-        }
-      }, {
         breakpoint: 600,
         settings: {
-          centerMode: false
+          slidesToShow: 1
         }
       }
     ]
@@ -138,30 +131,12 @@ function loadedSection07() {
 
   let tab = document.querySelector('.section-07 .tab:nth-child(2)')
   tab.addEventListener('tab.change', function(e) {
-    onSlidesNext()
+    let tabContent = document.querySelector('.section-07 .tab .show')
+    onSlidesNext(`#${tabContent.id}`)
   })
 
-  let slickPrevLink = document.querySelector('.section-07 #tab-content-02 .icon-arrow-left')
-  slickPrevLink.addEventListener('click', function() {
-    onSlidesPrev()
-  })
-
-  let slickNextLink = document.querySelector('.section-07 #tab-content-02 .icon-arrow-right')
-  slickNextLink.addEventListener('click', function() {
-    onSlidesNext()
-  })
-
-  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
-  progressBar.percentWidth = 0
-  setInterval(function() {
-
-    if(progressBar.percentWidth === 100) {
-      onSlidesNext()
-    }
-
-    progressBar.percentWidth += 0.5
-    progressBar.style.width = `${progressBar.percentWidth}%`
-  }, 25)
+  onTabLoaded('#tab-content-01')
+  onTabLoaded('#tab-content-02')
 
   let buttons = document.querySelectorAll('.section-07 .dot button')
   buttons.forEach(function(button) {
@@ -183,20 +158,44 @@ function loadedSection07() {
   })
 }
 
-function onSlidesPrev() {
-  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
-  progressBar.percentWidth = 0
-  progressBar.style.width = 0;
+function onTabLoaded(tabId) {
+  let slickPrevLink = document.querySelector(`.section-07 ${tabId} .icon-arrow-left`)
+  slickPrevLink.addEventListener('click', function() {
+    onSlidesPrev(tabId)
+  })
 
-  $('.section-07 #tab-content-02 .slick').slick('slickPrev')
+  let slickNextLink = document.querySelector(`.section-07 ${tabId} .icon-arrow-right`)
+  slickNextLink.addEventListener('click', function() {
+    onSlidesNext(tabId)
+  })
+
+  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
+  progressBar.percentWidth = 0
+  setInterval(function() {
+
+    if(progressBar.percentWidth === 100) {
+      onSlidesNext(tabId)
+    }
+
+    progressBar.percentWidth += 0.5
+    progressBar.style.width = `${progressBar.percentWidth}%`
+  }, 25)
 }
 
-function onSlidesNext() {
-  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
+function onSlidesPrev(tabId) {
+  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
   progressBar.percentWidth = 0
   progressBar.style.width = 0;
 
-  $('.section-07 #tab-content-02 .slick').slick('slickNext')
+  $(`.section-07 ${tabId} .slick`).slick('slickPrev')
+}
+
+function onSlidesNext(tabId) {
+  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
+  progressBar.percentWidth = 0
+  progressBar.style.width = 0;
+
+  $(`.section-07 ${tabId} .slick`).slick('slickNext')
 }
 
 function beforeSelectCarColor() {
