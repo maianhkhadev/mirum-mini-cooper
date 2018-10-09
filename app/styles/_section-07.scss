@@ -23,13 +23,6 @@
       }
     }
 
-    .furniture {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 35rem;
-    }
-
     .slick {
 
       .slick-active {
@@ -45,13 +38,9 @@
 
         .slide {
           position: relative;
-          transform: skewX(25deg);
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: 32.5rem;
-          margin-left: -32%;
-          margin-right: -32%;
 
           .dot {
             position: absolute;
@@ -125,6 +114,50 @@
     #tab-content-01 {
 
       .slick {
+
+        .slide {
+          transform: skewX(25deg);
+          height: 32.5rem;
+          margin-left: -32%;
+          margin-right: -32%;
+        }
+
+        .slide-01 {
+
+          .dot {
+            top: 65%;
+            left: 65%;
+          }
+        }
+
+        .slide-02 {
+
+          .dot {
+            top: 55%;
+            left: 45%;
+          }
+        }
+
+        .slide-03 {
+
+          .dot {
+            top: 75%;
+            left: 50%;
+          }
+        }
+      }
+    }
+
+    #tab-content-02 {
+
+      .slick {
+
+        .slide {
+          transform: skewX(25deg);
+          height: 32.5rem;
+          margin-left: -32%;
+          margin-right: -32%;
+        }
 
         .slide-01 {
 

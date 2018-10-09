@@ -45,6 +45,10 @@
           padding-top: 75%;
         }
 
+        @media screen and (min-width: 600px) and (max-width: 1200px) and (orientation: landscape) {
+          padding-top: 40%;
+        }
+
         @media screen and (max-width: 600px) {
           padding-top: 100%;
         }

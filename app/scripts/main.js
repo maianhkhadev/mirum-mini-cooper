@@ -40,6 +40,33 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   })
 
+  // Set active color
+  let color = document.querySelector('.section-06 .block-colors .color')
+  color.classList.add('active')
+
+  let colors = document.querySelectorAll('.section-06 .block-colors .color')
+  colors.forEach(function(color) {
+    color.addEventListener('click', function() {
+
+      let imCarUrl = color.dataset.imCarUrl
+      beforeSelectCarColor()
+      onSelectCarColor(imCarUrl)
+      color.classList.add('active')
+    })
+  })
+
+  loadedSection03()
+  loadedSection07()
+
+  AOS.init({
+    once: true,
+    offset: 0,
+    duration: 500,
+    easing: 'ease-in'
+  })
+})
+
+function loadedSection03() {
   $('.section-03 .slick').slick({
     dots: false,
     arrows: false,
@@ -59,47 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
       popover.classList.add('show')
     })
   })
-
-  // Set active color
-  let color = document.querySelector('.section-06 .block-colors .color')
-  color.classList.add('active')
-
-  let colors = document.querySelectorAll('.section-06 .block-colors .color')
-  colors.forEach(function(color) {
-    color.addEventListener('click', function() {
-
-      let imCarUrl = color.dataset.imCarUrl
-      beforeSelectCarColor()
-      onSelectCarColor(imCarUrl)
-      color.classList.add('active')
-    })
-  })
-
-  // loadedSection04()
-  loadedSection07()
-
-  AOS.init({
-    once: true,
-    offset: 0,
-    duration: 500,
-    easing: 'ease-in'
-  })
-})
-
-function loadedSection04() {
-
-  $('.section-04 select').selectize({
-    onChange: function() {
-      calcCarFee()
-    }
-  })
-
-  calcCarFee()
 }
 
 function loadedSection07() {
 
-  $('.section-07 .slick').slick({
+  $('.section-07 #tab-content-01 .slick').slick({
     dots: false,
     arrows: false,
     swipe: false,
@@ -122,17 +113,45 @@ function loadedSection07() {
     ]
   })
 
-  let slickPrevLink = document.querySelector('.section-07 .icon-arrow-left')
+  $('.section-07 #tab-content-02 .slick').slick({
+    dots: false,
+    arrows: false,
+    swipe: false,
+    draggable: false,
+    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: '30%',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '20%'
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          centerMode: false
+        }
+      }
+    ]
+  })
+
+  let tab = document.querySelector('.section-07 .tab:nth-child(2)')
+  tab.addEventListener('tab.change', function(e) {
+    onSlidesNext()
+  })
+
+  let slickPrevLink = document.querySelector('.section-07 #tab-content-02 .icon-arrow-left')
   slickPrevLink.addEventListener('click', function() {
     onSlidesPrev()
   })
 
-  let slickNextLink = document.querySelector('.section-07 .icon-arrow-right')
+  let slickNextLink = document.querySelector('.section-07 #tab-content-02 .icon-arrow-right')
   slickNextLink.addEventListener('click', function() {
     onSlidesNext()
   })
 
-  let progressBar = document.querySelector('.section-07 .progress-bar')
+  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
   progressBar.percentWidth = 0
   setInterval(function() {
 
@@ -164,31 +183,20 @@ function loadedSection07() {
   })
 }
 
-function calcCarFee() {
-  let value = 0
-  let selects = document.querySelectorAll('.section-04 .show select')
-  selects.forEach(function(select) {
-    value += parseInt(select.value)
-  })
-
-  let valueElement = document.querySelector('.section-04 .block-info .value')
-  valueElement.innerHTML = value.toFixed(2);
-}
-
 function onSlidesPrev() {
-  let progressBar = document.querySelector('.section-07 .progress-bar')
+  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
   progressBar.percentWidth = 0
   progressBar.style.width = 0;
 
-  $('.section-07 .slick').slick('slickPrev')
+  $('.section-07 #tab-content-02 .slick').slick('slickPrev')
 }
 
 function onSlidesNext() {
-  let progressBar = document.querySelector('.section-07 .progress-bar')
+  let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
   progressBar.percentWidth = 0
   progressBar.style.width = 0;
 
-  $('.section-07 .slick').slick('slickNext')
+  $('.section-07 #tab-content-02 .slick').slick('slickNext')
 }
 
 function beforeSelectCarColor() {
