@@ -111,6 +111,24 @@
       }
     }
 
+    .tab-contents {
+      position: relative;
+      height: 35.125rem;
+
+      .tab-content {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        &.show {
+          z-index: 100;
+        }
+      }
+    }
     #tab-content-01 {
 
       .slick {
@@ -125,8 +143,8 @@
         .slide-01 {
 
           .dot {
-            top: 65%;
-            left: 65%;
+            top: 32%;
+            left: 43%;
           }
         }
 
@@ -176,54 +194,6 @@
         }
       }
     }
-    // .slick {
-    //   margin-top: 1.5rem;
-    //
-    //   @media screen and (max-width: 600px) {
-    //     margin-left: -1rem;
-    //     margin-right: -1rem;
-    //   }
-    //
-    //   .slide {
-    //     position: relative;
-    //     background-position: center;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     height: 32.5rem;
-    //
-    //     @media screen and (max-width: 600px) {
-    //
-    //     }
-    //
-    //     [class*='dot-'] {
-    //       position: absolute;
-    //       top: 50%;
-    //       width: 3.25rem;
-    //       height: 3.25rem;
-    //       cursor: pointer;
-    //     }
-    //
-    //     .dot-01 {
-    //       left: 5rem;
-    //
-    //       @media screen and (max-width: 1200px) {
-    //         display: none;
-    //       }
-    //     }
-    //
-    //     .dot-02 {
-    //       left: calc(50% - 10rem);
-    //     }
-    //
-    //     .dot-03 {
-    //       right: 10rem;
-    //
-    //       @media screen and (max-width: 1200px) {
-    //         display: none;
-    //       }
-    //     }
-    //   }
-    // }
 
     .progress {
       position: relative;
