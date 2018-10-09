@@ -1,0 +1,54 @@
+#page-home {
+
+  .modal-image {
+    width: 1000px;
+    background-color: transparent;
+    border-width: 0;
+
+    @media screen and (max-width: 1200px) {
+      width: calc(100% - 2rem);
+    }
+
+    .modal-header {
+      border-bottom: unset;
+      padding: 1.5rem;
+
+      .close {
+        top: 0;
+        color: #ffffff;
+        background-color: transparent;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+        border-width: 0;
+        cursor: pointer;
+
+        &:focus {
+          outline: unset;
+        }
+      }
+    }
+
+    .modal-content {
+      border: 0.25rem solid #ffffff;
+      border-radius: 1rem;
+      padding: 0;
+      overflow: hidden;
+
+      .image-detail {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 50%;
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+          padding-top: 75%;
+        }
+
+        @media screen and (max-width: 600px) {
+          padding-top: 100%;
+        }
+      }
+    }
+  }
+}

@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   loadedSection07()
 
   AOS.init({
+    once: true,
     offset: 0,
     duration: 500,
     easing: 'ease-in'
@@ -101,12 +102,18 @@ function loadedSection07() {
   $('.section-07 .slick').slick({
     dots: false,
     arrows: false,
+    swipe: false,
     draggable: false,
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '30%',
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '20%'
+        }
+      }, {
         breakpoint: 600,
         settings: {
           centerMode: false
@@ -137,12 +144,24 @@ function loadedSection07() {
     progressBar.style.width = `${progressBar.percentWidth}%`
   }, 25)
 
-  // let dots = document.querySelectorAll('.section-07 [class*="dot-"]')
-  // dots.forEach(function(dot) {
-  //   dot.addEventListener('click', function() {
-  //     uiKit.Modal.show('.modal-video')
-  //   })
-  // })
+  let buttons = document.querySelectorAll('.section-07 .dot button')
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      let url = button.dataset.modalImageUrl
+      let image = document.querySelector('.modal-image .image-detail')
+      image.style.backgroundImage = `url(${url})`
+
+      let touchDevice = document.querySelector('.touch-device')
+      if(touchDevice === null) {
+        uiKit.Modal.show('.modal-image')
+      }
+      else {
+        setTimeout(function() {
+          uiKit.Modal.show('.modal-image')
+        }, 500)
+      }
+    })
+  })
 }
 
 function calcCarFee() {

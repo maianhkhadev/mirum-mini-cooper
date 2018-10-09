@@ -38,26 +38,26 @@
 html:not(.touch-device) {
 
   .btn-black-effect {
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ffffff;
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-      transition: transform 0.3s ease-out;
-      z-index: -1;
-    }
+    transition: all 0.3s ease-out;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background-color: #ffffff;
+    //   transform: scaleX(0);
+    //   transform-origin: 0 50%;
+    //   transition: all 0.3s ease-out;
+    //   z-index: -1;
+    // }
 
     &:hover {
-
-      &::before {
-        transform: scaleX(1);
-      }
+      background-color: #ffffff;
+      // &::before {
+      //   transform: scaleX(1);
+      // }
 
       .text {
         color: #000000;

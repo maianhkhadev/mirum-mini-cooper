@@ -52,6 +52,102 @@
           height: 32.5rem;
           margin-left: -32%;
           margin-right: -32%;
+
+          .dot {
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            button {
+              position: relative;
+              width: 3.75rem;
+              height: 3.75rem;
+              color: #ffffff;
+              background-color: transparent;
+              font-size: 1.75rem;
+              border: 0.125rem solid #ffffff;
+              border-radius: 50%;
+              cursor: pointer;
+
+              span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 1.5rem;
+                height: 1.5rem;
+                transform: translate(-50%, -50%);
+                background-color: #ffffff;
+                border-radius: 50%;
+              }
+
+              &::before, &::after {
+                content: '';
+                position: absolute;
+                width: calc(100% + 0.25rem);
+                height: calc(100% + 0.25rem);
+                border: 0.125rem solid transparent;
+                border-radius: 50%;
+              }
+
+              &::before, &::after {
+                top: -0.125rem;
+                left: -0.125rem;
+              }
+
+              &:hover, &.press {
+                border-color: transparent;
+              }
+
+              &:hover::before, &.press::before {
+                border-top-color: #ffffff;
+                border-right-color: #ffffff;
+                border-bottom-color: #ffffff;
+                transition:
+                  border-top-color 0.15s linear 0.05s,
+                  border-right-color 0.15s linear 0.15s,
+                  border-bottom-color 0.15s linear 0.25s;
+              }
+
+              &:hover::after, &.press::after {
+                border-top-color: #ffffff;
+                transform: rotate(270deg);
+                transition: transform 0.45s linear 0.05s,
+              }
+
+              &:focus {
+                outline: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #tab-content-01 {
+
+      .slick {
+
+        .slide-01 {
+
+          .dot {
+            top: 65%;
+            left: 65%;
+          }
+        }
+
+        .slide-03 {
+
+          .dot {
+            top: 55%;
+            left: 45%;
+          }
+        }
+
+        .slide-04 {
+
+          .dot {
+            top: 75%;
+            left: 50%;
+          }
         }
       }
     }
