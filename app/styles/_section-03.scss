@@ -2,7 +2,16 @@
 
   .section-03 {
 
-    .slick {
+    .slick-01 {
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .slick-02 {
 
       img {
         border: 0.0625rem solid #e0e0e0;

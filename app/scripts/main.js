@@ -67,7 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function loadedSection03() {
-  $('.section-03 .slick').slick({
+
+  // $('.section-03 .slick-01').slick({
+  //   dots: false,
+  //   arrows: false,
+  //   fade: true
+  // })
+
+  $('.section-03 .slick-02').slick({
     dots: false,
     arrows: false,
     variableWidth: true
@@ -95,22 +102,6 @@ function loadedSection07() {
     arrows: false,
     swipe: false,
     draggable: false,
-    slidesToShow: 2,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  })
-
-  $('.section-07 #tab-content-02 .slick').slick({
-    dots: false,
-    arrows: false,
-    swipe: false,
-    draggable: false,
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '30%',
@@ -124,6 +115,22 @@ function loadedSection07() {
         breakpoint: 600,
         settings: {
           centerMode: false
+        }
+      }
+    ]
+  })
+
+  $('.section-07 #tab-content-02 .slick').slick({
+    dots: false,
+    arrows: false,
+    swipe: false,
+    draggable: false,
+    slidesToShow: 2,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1
         }
       }
     ]

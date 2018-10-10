@@ -129,36 +129,8 @@
         }
       }
     }
+
     #tab-content-01 {
-
-      .slick {
-
-        .slide {
-          transform: skewX(25deg);
-          height: 32.5rem;
-          margin-left: -32%;
-          margin-right: -32%;
-        }
-
-        .slide-01 {
-
-          .dot {
-            top: 32%;
-            left: 43%;
-          }
-        }
-
-        .slide-02 {
-
-          .dot {
-            top: 55%;
-            left: 45%;
-          }
-        }
-      }
-    }
-
-    #tab-content-02 {
 
       .slick {
 
@@ -190,6 +162,40 @@
           .dot {
             top: 75%;
             left: 50%;
+          }
+        }
+      }
+    }
+
+    #tab-content-02 {
+
+      .slick {
+
+        .slide {
+          transform: skewX(25deg);
+          height: 32.5rem;
+          margin-left: -32%;
+          margin-right: -32%;
+        }
+
+        .slide-01 {
+
+          .dot {
+            top: 32%;
+            left: 43%;
+          }
+        }
+
+        .slide-02 {
+
+          .dot:nth-child(1) {
+            top: 20%;
+            left: 50%;
+          }
+
+          .dot:nth-child(2) {
+            top: 93%;
+            left: 49%;
           }
         }
       }

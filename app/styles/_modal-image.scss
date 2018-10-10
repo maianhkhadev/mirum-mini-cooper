@@ -1,17 +1,24 @@
 #page-home {
 
   .modal-image {
-    width: 1000px;
+    width: 100vw;
+    height: 100vh;
     background-color: transparent;
     border-width: 0;
 
-    @media screen and (max-width: 1200px) {
-      width: calc(100% - 2rem);
-    }
+    // @media screen and (max-width: 1200px) {
+    //   width: calc(100% - 2rem);
+    // }
 
     .modal-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
       border-bottom: unset;
       padding: 1.5rem;
+      z-index: 6000;
 
       .close {
         top: 0;
@@ -30,8 +37,6 @@
     }
 
     .modal-content {
-      border: 0.25rem solid #ffffff;
-      border-radius: 1rem;
       padding: 0;
       overflow: hidden;
 
