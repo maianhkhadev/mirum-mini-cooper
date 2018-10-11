@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {  
+document.addEventListener('DOMContentLoaded', function() {
 
   loadedSection01()
   loadedSection03()
@@ -74,23 +74,42 @@ function loadedSection03() {
     asNavFor: '.section-03 .slick-01'
   })
 
+  $('.section-03 .slick-01').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    let popovers = document.querySelectorAll('.section-03 svg .popover')
+    popovers.forEach(function(popover) {
+      popover.classList.remove('show')
+    })
+  })
+
+  $('.section-03 .slick-01').on('afterChange', function(event, slick, currentSlide, nextSlide) {
+    showLabels()
+  })
+
   let dots = document.querySelectorAll('.section-03 svg .dot')
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
 
-      let popovers = document.querySelectorAll('.section-03 svg .popover')
-      popovers.forEach(function(popover) {
-        popover.classList.remove('show')
-      })
-
-      let popover = dot.previousElementSibling
-      popover.classList.add('show')
+      if(dot.classList.contains('dot-active') === false) {
+        let slickIndex = dot.dataset.slickIndex
+        $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
+      }
 
       setTimeout(function() {
         uiKit.Modal.show('.modal-video')
-      }, 750)
+      }, 1000)
     })
   })
+
+  let images = document.querySelectorAll('.section-03 .slick .slick-item img')
+  images.forEach(function(image) {
+    image.addEventListener('click', function() {
+
+      let slickIndex = image.dataset.slickIndex
+      $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
+    })
+  })
+
+  showLabels()
 }
 
 function loadedSection06() {
@@ -176,6 +195,13 @@ function loadedSection07() {
         }, 500)
       }
     })
+  })
+}
+
+function showLabels() {
+  let popovers = document.querySelectorAll('.section-03 svg .popover')
+  popovers.forEach(function(popover) {
+    popover.classList.add('show')
   })
 }
 
