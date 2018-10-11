@@ -1,4 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {  
+
+  loadedSection01()
+  loadedSection03()
+  loadedSection06()
+  loadedSection07()
+
+  AOS.init({
+    once: true,
+    offset: 0,
+    duration: 500,
+    easing: 'ease-in'
+  })
+})
+
+function loadedSection01() {
 
   $('.section-01 .slick-01').slick({
     dots: true,
@@ -39,45 +54,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     ]
   })
-
-  // Set active color
-  let color = document.querySelector('.section-06 .block-colors .color')
-  color.classList.add('active')
-
-  let colors = document.querySelectorAll('.section-06 .block-colors .color')
-  colors.forEach(function(color) {
-    color.addEventListener('click', function() {
-
-      let imCarUrl = color.dataset.imCarUrl
-      beforeSelectCarColor()
-      onSelectCarColor(imCarUrl)
-      color.classList.add('active')
-    })
-  })
-
-  loadedSection03()
-  loadedSection07()
-
-  AOS.init({
-    once: true,
-    offset: 0,
-    duration: 500,
-    easing: 'ease-in'
-  })
-})
+}
 
 function loadedSection03() {
 
-  // $('.section-03 .slick-01').slick({
-  //   dots: false,
-  //   arrows: false,
-  //   fade: true
-  // })
+  $('.section-03 .slick-01').slick({
+    fade: true,
+    dots: true,
+    arrows: true,
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-left-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-right-black-64.png" alt=""/>',
+    asNavFor: '.section-03 .slick-02'
+  })
 
   $('.section-03 .slick-02').slick({
     dots: false,
     arrows: false,
-    variableWidth: true
+    variableWidth: true,
+    asNavFor: '.section-03 .slick-01'
   })
 
   let dots = document.querySelectorAll('.section-03 svg .dot')
@@ -91,6 +85,26 @@ function loadedSection03() {
 
       let popover = dot.previousElementSibling
       popover.classList.add('show')
+
+      setTimeout(function() {
+        uiKit.Modal.show('.modal-video')
+      }, 750)
+    })
+  })
+}
+
+function loadedSection06() {
+  let color = document.querySelector('.section-06 .block-colors .color')
+  color.classList.add('active')
+
+  let colors = document.querySelectorAll('.section-06 .block-colors .color')
+  colors.forEach(function(color) {
+    color.addEventListener('click', function() {
+
+      let imCarUrl = color.dataset.imCarUrl
+      beforeSelectCarColor()
+      onSelectCarColor(imCarUrl)
+      color.classList.add('active')
     })
   })
 }

@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.addEventListener('modal.hidden', function() {
     window.youtube.stopVideo()
   })
+
+  window.addEventListener('resize', function() {
+
+    setTimeout(function() {
+      let width = modal.clientWidth
+      window.youtube.loadVideoById('0nN10kXNiIY')
+      window.youtube.setSize(width, width * 0.5625)
+      window.youtube.stopVideo()
+    }, 1000)
+  })
+
+
 })
 
 function onYouTubeIframeAPIReady() {

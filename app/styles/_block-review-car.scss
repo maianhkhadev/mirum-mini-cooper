@@ -1,12 +1,9 @@
 .block-review-car {
 
-  @media screen and (max-width: 1200px) {
-    margin-bottom: 2rem;
-  }
-
   svg {
 
     .popover {
+      transition: all 0.25s ease-in;
       opacity: 0;
 
       .popover-text {
@@ -20,6 +17,21 @@
 
     .dot {
       cursor: pointer;
+
+      circle {
+        transition: all 0.25s ease-in;
+      }
+
+      &:hover, &.dot-active {
+
+        circle:nth-child(1) {
+          r: 60;
+        }
+
+        circle:nth-child(2) {
+          fill: transparent;
+        }
+      }
     }
   }
 }

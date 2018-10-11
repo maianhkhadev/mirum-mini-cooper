@@ -2,7 +2,6 @@
 
   @media screen and (max-width: 600px) {
     margin-top: 1.75rem;
-    margin-right: -1rem;
   }
 
   h6.block-title {
@@ -23,7 +22,7 @@
     }
 
     @media screen and (max-width: 600px) {
-      grid-template-columns: repeat(10, 4rem);
+      grid-template-columns: repeat(5, 20%);
       overflow-x: auto;
     }
 
