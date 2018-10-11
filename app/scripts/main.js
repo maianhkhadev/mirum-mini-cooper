@@ -88,7 +88,7 @@ function loadedSection03() {
   let dots = document.querySelectorAll('.section-03 svg .dot')
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
-
+      
       if(dot.classList.contains('dot-active') === false) {
         let slickIndex = dot.dataset.slickIndex
         $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
