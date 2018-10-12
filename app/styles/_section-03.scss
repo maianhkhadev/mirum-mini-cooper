@@ -5,9 +5,15 @@
     .slick-01 {
       margin-bottom: 2.5rem;
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (min-width: 600px) and (max-width: 1200px) {
         margin-left: -1rem;
         margin-right: -1rem;
+        overflow: unset;
+      }
+
+      @media screen and (max-width: 600px) {
+        margin-left: -2rem;
+        margin-right: -2rem;
         overflow: unset;
       }
 
@@ -56,8 +62,8 @@
               content: '';
               top: 50%;
               left: 50%;
-              width: 0.75rem;
-              height: 0.75rem;
+              width: 0.5rem;
+              height: 0.5rem;
               transform: translate(-50%, -50%);
               font-size: 0.625rem;
               line-height: 1.875rem;

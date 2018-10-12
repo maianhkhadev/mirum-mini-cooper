@@ -6,6 +6,11 @@
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 
+  @media screen and (max-width: 600px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .text {
     position: relative;
     color: #fbfaf7;

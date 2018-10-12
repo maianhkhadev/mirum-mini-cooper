@@ -5,11 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
   loadedSection06()
   loadedSection07()
 
+  setTimeout(function() {
+    window.uiKit.GroupHeight.calc()
+  }, 1000)
+
   AOS.init({
-    once: true,
-    offset: 0,
+    offset: 120,
     duration: 500,
-    easing: 'ease-in'
+    easing: 'ease-in',
+    anchorPlacement: 'bottom'
   })
 })
 
@@ -106,6 +110,10 @@ function loadedSection03() {
 
       let slickIndex = image.dataset.slickIndex
       $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
+
+      setTimeout(function() {
+        uiKit.Modal.show('.modal-video')
+      }, 1000)
     })
   })
 
@@ -169,6 +177,16 @@ function loadedSection07() {
     ]
   })
 
+  $('.section-07 #tab-content-01 .slick').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    let progressBar = document.querySelector('.section-07 #tab-content-01 .progress-bar')
+    progressBar.style.left = `${nextSlide * 25}%`
+  })
+
+  $('.section-07 #tab-content-02 .slick').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
+    progressBar.style.left = `${parseInt(nextSlide / 2) * 50}%`
+  })
+
   let tab = document.querySelector('.section-07 .tab:nth-child(2)')
   tab.addEventListener('tab.change', function(e) {
     let tabContent = document.querySelector('.section-07 .tab .show')
@@ -216,31 +234,31 @@ function onTabLoaded(tabId) {
     onSlidesNext(tabId)
   })
 
-  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
-  progressBar.percentWidth = 0
-  setInterval(function() {
-
-    if(progressBar.percentWidth === 100) {
-      onSlidesNext(tabId)
-    }
-
-    progressBar.percentWidth += 0.5
-    progressBar.style.width = `${progressBar.percentWidth}%`
-  }, 25)
+  // let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
+  // progressBar.percentWidth = 0
+  // setInterval(function() {
+  //
+  //   if(progressBar.percentWidth === 100) {
+  //     onSlidesNext(tabId)
+  //   }
+  //
+  //   progressBar.percentWidth += 0.5
+  //   progressBar.style.width = `${progressBar.percentWidth}%`
+  // }, 25)
 }
 
 function onSlidesPrev(tabId) {
-  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
-  progressBar.percentWidth = 0
-  progressBar.style.width = 0;
+  // let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
+  // progressBar.percentWidth = 0
+  // progressBar.style.width = 0;
 
   $(`.section-07 ${tabId} .slick`).slick('slickPrev')
 }
 
 function onSlidesNext(tabId) {
-  let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
-  progressBar.percentWidth = 0
-  progressBar.style.width = 0;
+  // let progressBar = document.querySelector(`.section-07 ${tabId} .progress-bar`)
+  // progressBar.percentWidth = 0
+  // progressBar.style.width = 0;
 
   $(`.section-07 ${tabId} .slick`).slick('slickNext')
 }

@@ -21,9 +21,9 @@
     margin-bottom: 3.5rem;
 
     &.one {
-      width: calc(100% + 6.625rem);
+      width: calc(100% + 8rem);
       max-width: unset;
-      margin-right: -6.625rem;
+      margin-right: -8rem;
 
       @media screen and (min-width: 600px) and (max-width: 1200px) {
         width: calc(100% + 1rem);
@@ -31,15 +31,15 @@
       }
 
       @media screen and (max-width: 600px) {
-        width: calc(100% + 1rem);
-        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        margin-right: -2rem;
       }
     }
 
     &.two {
-      width: calc(100% + 6.625rem);
+      width: calc(100% + 8rem);
       max-width: unset;
-      margin-left: -6.625rem;
+      margin-left: -8rem;
 
       @media screen and (min-width: 600px) and (max-width: 1200px) {
         width: calc(100% + 1rem);
@@ -47,8 +47,8 @@
       }
 
       @media screen and (max-width: 600px) {
-        width: calc(100% + 1rem);
-        margin-left: -1rem;
+        width: calc(100% + 2rem);
+        margin-left: -2rem;
       }
     }
   }

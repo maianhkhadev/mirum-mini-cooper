@@ -1,7 +1,7 @@
 #page-home {
 
   .section-01 {
-
+    
     .offset-xl-1 {
       margin-right: 8.333333%;
     }
@@ -47,8 +47,8 @@
               content: '';
               top: 50%;
               left: 50%;
-              width: 0.75rem;
-              height: 0.75rem;
+              width: 0.5rem;
+              height: 0.5rem;
               transform: translate(-50%, -50%);
               font-size: 0.625rem;
               line-height: 1.875rem;
@@ -74,8 +74,8 @@
     .slick-01 {
 
       @media screen and (max-width: 600px) {
-        margin-left: -1rem;
-        margin-right: -1rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
       }
 
       .slick-slide {
@@ -108,6 +108,7 @@
     }
 
     .slick-02 {
+      margin-top: -1.375rem;
 
       .slick-slide {
 
