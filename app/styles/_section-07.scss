@@ -183,6 +183,10 @@
           .dot {
             top: 32%;
             left: 43%;
+
+            @media screen and (max-width: 600px) {
+              left: 40%;
+            }
           }
         }
 
