@@ -135,6 +135,10 @@
         bottom: 50%;
         transform: translate(calc(100% - 2rem), 50%);
 
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+          transform: translate(calc(100% - 1.75rem), 50%);
+        }
+
         @media screen and (max-width: 350px) {
           left: -0.3571rem;
         }
