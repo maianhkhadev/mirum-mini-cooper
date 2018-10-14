@@ -141,8 +141,8 @@ function loadedSection07() {
   $('.section-07 #tab-content-01 .slick').slick({
     dots: false,
     arrows: false,
-    swipe: false,
-    draggable: false,
+    // swipe: false,
+    // draggable: false,
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '30%',
@@ -164,8 +164,8 @@ function loadedSection07() {
   $('.section-07 #tab-content-02 .slick').slick({
     dots: false,
     arrows: false,
-    swipe: false,
-    draggable: false,
+    // swipe: false,
+    // draggable: false,
     slidesToShow: 2,
     responsive: [
       {
@@ -183,8 +183,9 @@ function loadedSection07() {
   })
 
   $('.section-07 #tab-content-02 .slick').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    let index = nextSlide === 0 || nextSlide === 2 ? 0 : 1
     let progressBar = document.querySelector('.section-07 #tab-content-02 .progress-bar')
-    progressBar.style.left = `${parseInt(nextSlide / 2) * 50}%`
+    progressBar.style.left = `${index * 50}%`
   })
 
   let tab = document.querySelector('.section-07 .tab:nth-child(2)')
@@ -207,11 +208,15 @@ function loadedSection07() {
       if(touchDevice === null) {
         uiKit.Modal.show('.modal-image')
       }
-      else {
-        setTimeout(function() {
-          uiKit.Modal.show('.modal-image')
-        }, 500)
-      }
+    })
+
+    var hammer = new Hammer(button)
+    hammer.get('press').set({ time: 500 })
+    hammer.on('press', function(e) {
+      let url = button.dataset.modalImageUrl
+      let image = document.querySelector('.modal-image .image-detail')
+      image.style.backgroundImage = `url(${url})`
+    	uiKit.Modal.show('.modal-image')
     })
   })
 }
