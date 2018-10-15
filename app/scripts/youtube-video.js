@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
       let width = modal.clientWidth
-      window.youtube.loadVideoById('0nN10kXNiIY')
       window.youtube.setSize(width, width * 0.5625)
       window.youtube.stopVideo()
     }, 1000)
@@ -32,7 +31,7 @@ function onYouTubeIframeAPIReady() {
   window.youtube = new YT.Player('player', {
     width: width,
     height: width * 0.5625,
-    videoId: '0nN10kXNiIY',
+    videoId: 'YBjqMogvJyU',
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange

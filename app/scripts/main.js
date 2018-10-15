@@ -63,6 +63,7 @@ function loadedSection01() {
 function loadedSection03() {
 
   $('.section-03 .slick-01').slick({
+    initialSlide: 2,
     fade: true,
     dots: true,
     arrows: true,
@@ -72,6 +73,7 @@ function loadedSection03() {
   })
 
   $('.section-03 .slick-02').slick({
+    initialSlide: 2,
     dots: false,
     arrows: false,
     variableWidth: true,
@@ -83,37 +85,59 @@ function loadedSection03() {
     popovers.forEach(function(popover) {
       popover.classList.remove('show')
     })
+
+    let dot = document.querySelector('.section-03 svg .dot-active-after-view')
+    if(dot !== null) {
+      dot.classList.add('dot-active')
+      dot.classList.remove('dot-active-after-view')
+    }
   })
 
   $('.section-03 .slick-01').on('afterChange', function(event, slick, currentSlide, nextSlide) {
     showLabels()
+
+    if(currentSlide === 0) {
+      window.youtube.loadVideoById('hIJ-jSwXPbs')
+    }
+    else if(currentSlide === 1) {
+      window.youtube.loadVideoById('EJ1y_VUKPQo')
+    }
+    else if(currentSlide === 2) {
+      window.youtube.loadVideoById('YBjqMogvJyU')
+    }
+    else {
+      window.youtube.loadVideoById('B42VCXoInlg')
+    }
+
+    setTimeout(function() {
+      uiKit.Modal.show('.modal-video')
+    }, 1000)
   })
 
   let dots = document.querySelectorAll('.section-03 svg .dot')
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
 
-      if(dot.classList.contains('dot-active') === false) {
+      if(dot.classList.contains('dot-active-after-view') === true) {
+        dot.classList.add('dot-active')
+        dot.classList.remove('dot-active-after-view')
+        uiKit.Modal.show('.modal-video')
+      }
+      else if(dot.classList.contains('dot-active') === false) {
         let slickIndex = dot.dataset.slickIndex
         $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
       }
-
-      setTimeout(function() {
+      else {
         uiKit.Modal.show('.modal-video')
-      }, 1000)
+      }
     })
   })
 
   let images = document.querySelectorAll('.section-03 .slick .slick-item img')
   images.forEach(function(image) {
     image.addEventListener('click', function() {
-
       let slickIndex = image.dataset.slickIndex
       $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
-
-      setTimeout(function() {
-        uiKit.Modal.show('.modal-video')
-      }, 1000)
     })
   })
 
@@ -141,8 +165,6 @@ function loadedSection07() {
   $('.section-07 #tab-content-01 .slick').slick({
     dots: false,
     arrows: false,
-    // swipe: false,
-    // draggable: false,
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '30%',
@@ -164,8 +186,6 @@ function loadedSection07() {
   $('.section-07 #tab-content-02 .slick').slick({
     dots: false,
     arrows: false,
-    // swipe: false,
-    // draggable: false,
     slidesToShow: 2,
     responsive: [
       {
