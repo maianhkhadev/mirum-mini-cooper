@@ -15,6 +15,40 @@ document.addEventListener('DOMContentLoaded', function() {
     easing: 'ease-in',
     anchorPlacement: 'bottom'
   })
+
+  let images = [
+    './images/page-home/section-06/car-01.png',
+    './images/page-home/section-06/car-02.png',
+    './images/page-home/section-06/car-03.png',
+    './images/page-home/section-06/car-04.png',
+    './images/page-home/section-06/car-05.png',
+    './images/page-home/section-06/car-06.png',
+    './images/page-home/section-06/car-07.png',
+    './images/page-home/section-06/car-08.png',
+    './images/page-home/section-06/car-09.png',
+    './images/page-home/section-06/car-10.png',
+    './images/page-home/section-07/modal-im-01.jpg',
+    './images/page-home/section-07/modal-im-03.jpg',
+    './images/page-home/section-07/modal-im-04.jpg',
+    './images/page-home/section-07/modal-im-05.jpg',
+    './images/page-home/section-07/modal-im-06.jpg',
+    './images/page-home/section-07/modal-im-07.jpg',
+  ]
+
+  let promises = []
+
+  images.forEach(function(src) {
+
+    let promise = new Promise(function(resolve, reject) {
+
+      let img = new Image();
+      img.onload = () => resolve(true)
+      img.src = src
+    })
+    promises.push(promise)
+  })
+
+  return Promise.all(promises)
 })
 
 function loadedSection01() {
