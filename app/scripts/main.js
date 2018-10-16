@@ -58,8 +58,8 @@ function loadedSection01() {
     arrows: true,
     vertical: true,
     verticalSwiping: true,
-    prevArrow: '<img id="carrouselTopArrowUp" class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
-    nextArrow: '<img id="carrouselTopArrowDown" class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
     asNavFor: '.section-01 .slick-02',
     responsive: [
       {
@@ -79,8 +79,8 @@ function loadedSection01() {
     arrows: false,
     fade: true,
     draggable: false,
-    prevArrow: '<img id="carrouselTopArrowUp" class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
-    nextArrow: '<img id="carrouselTopArrowDown" class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-up-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-down-black-64.png" alt=""/>',
     asNavFor: '.section-01 .slick-01',
     responsive: [
       {
@@ -101,8 +101,8 @@ function loadedSection03() {
     fade: true,
     dots: true,
     arrows: true,
-    prevArrow: '<img id="carrouselMiddlePrecedent" class="slick-prev" src="./images/icon-angle-arrow-left-black-64.png" alt=""/>',
-    nextArrow: '<img id="carrouselMiddleSuivant" class="slick-next" src="./images/icon-angle-arrow-right-black-64.png" alt=""/>',
+    prevArrow: '<img class="slick-prev" src="./images/icon-angle-arrow-left-black-64.png" alt=""/>',
+    nextArrow: '<img class="slick-next" src="./images/icon-angle-arrow-right-black-64.png" alt=""/>',
     asNavFor: '.section-03 .slick-02'
   })
 
