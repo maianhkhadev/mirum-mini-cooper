@@ -1,29 +1,15 @@
 .block-mode {
   margin-bottom: 3.5rem;
 
-  &.block-mobile {
-
-    @media screen and (min-width: 600px) {
-      display: none;
-    }
-  }
-
-  &.block-desktop {
-
-    @media screen and (max-width: 600px) {
-      display: none;
-    }
-  }
-
   img.thumbnail {
     max-width: 100%;
     height: auto;
     margin-bottom: 3.5rem;
 
     &.one {
-      width: calc(100% + 8rem);
+      width: calc(100% + 6.625rem);
       max-width: unset;
-      margin-right: -8rem;
+      margin-right: -6.625rem;
 
       @media screen and (min-width: 600px) and (max-width: 1200px) {
         width: calc(100% + 1rem);
@@ -37,9 +23,9 @@
     }
 
     &.two {
-      width: calc(100% + 8rem);
+      width: calc(100% + 6.625rem);
       max-width: unset;
-      margin-left: -8rem;
+      margin-left: -6.625rem;
 
       @media screen and (min-width: 600px) and (max-width: 1200px) {
         width: calc(100% + 1rem);

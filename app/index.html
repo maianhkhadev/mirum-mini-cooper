@@ -32,9 +32,46 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="page-home" class="page page-home">
-      <main class="main">
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-11 ml-auto">
+            <nav class="navbar">
+              <a class="navbar-brand">
+                <img class="" src="./images/brand.png" alt=""/>
+              </a>
 
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link">UN POTENTIEL PLURIEL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">de multiples facettes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">Explorez</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">Allez plus loin</a>
+                </li>
+              </ul>
+
+              <button class="navbar-icon">
+                <span class="icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div id="page-home" class="page page-home">
         <section class="section-01">
           <div class="container">
             <div class="row">
@@ -112,7 +149,7 @@
                   <p class="section-paragraph" data-aos="fade-right">Thermique le week-end, électrique la semaine, switchez de mode quand vous le voulez et affirmez votre caractère hybride. Cela paraît compliqué ? Et pourtant, c’est si simple. Il suffit de s’adapter.</p>
                 </div>
 
-                <div class="block-mode block-desktop">
+                <div class="block-mode">
                   <img class="thumbnail two" src="./images/page-home/section-02/im-02.jpg" alt="" data-aos="fade-right"/>
                   <div class="block-header" data-aos="fade-right">
                     <h3 class="block-title">MODE MAX E-DRIVE</h3>
@@ -151,22 +188,6 @@
                       <img class="icon" src="./images/page-home/section-02/icon-01.png" alt=""/>
                       <div class="media-content">
                         <p>Le cerveau du véhicule. Il détermine la combinaison la plus efficiente entre le moteur électrique et thermique, en fonction de la vitesse. Roulez jusqu’à 80km/h en électrique avec un minimum de 7% de batterie sans consommer une goutte de carburant. La source de la conduite durable.<br>Un mode. <strong>AUTO E-DRIVE.</strong></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="block-mode block-mobile">
-                  <img class="thumbnail two" src="./images/page-home/section-02/im-02.jpg" alt="" data-aos="fade-right"/>
-                  <div class="block-header" data-aos="fade-right">
-                    <h3 class="block-title">MODE MAX E-DRIVE</h3>
-                    <div class="line"></div>
-                  </div>
-                  <div class="block-content" data-aos="fade-right">
-                    <div class="media">
-                      <img class="icon" src="./images/page-home/section-02/icon-02.png" alt=""/>
-                      <div class="media-content">
-                        <p>Les compromis, très peu pour vous. Vous avez choisi électrique ? Très bien, roulez jusqu’à 125 km/h sans émettre le moindre gramme de CO2 et sans consommer une goutte d’essence. Le tout électrique.<br>Un mode. <strong>MAX EDRIVE.</strong></p>
                       </div>
                     </div>
                   </div>
@@ -325,7 +346,7 @@
                           <rect class="popover-rect" x="0" y="0" width="222" height="40" fill="black"></rect>
                           <text class="popover-text" x="10" y="27.5" font-size="20" fill="white">MODE AUTO E-DRIVE</text>
                         </svg>
-                        <svg class="dot dot-active-after-view" x="800" y="150" data-slick-index="2">
+                        <svg class="dot dot-active" x="800" y="150" data-slick-index="2">
                           <circle cx="70" cy="70" r="40" stroke="white" stroke-width="3" fill="transparent"/>
                           <circle cx="70" cy="70" r="15" fill="white" />
                         </svg>
@@ -401,16 +422,11 @@
                     <img class="" src="./images/page-home/section-03/im-02.jpg" alt="" data-slick-index="3"/>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="modal modal-video">
-            <div class="modal-header">
-              <button type="button" class="close" data-modal-dimiss=".modal-video">&times;</button>
-            </div>
-            <div class="modal-content">
-              <div id="player"></div>
+                <button class="btn btn-black btn-black-effect">
+                  <span class="text">configurer cette finition</span>
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -616,15 +632,6 @@
               </div>
             </div>
           </div>
-
-          <div class="modal modal-image">
-            <div class="modal-header">
-              <button type="button" class="close" data-modal-dimiss=".modal-image">&times;</button>
-            </div>
-            <div class="modal-content">
-              <div class="image-detail"></div>
-            </div>
-          </div>
         </section>
 
         <section class="section-08">
@@ -703,8 +710,32 @@
             </div>
           </div>
         </section>
-      </main>
-    </div>
+
+        <div class="modal modal-video">
+          <div class="modal-header">
+            <button type="button" class="close" data-modal-dimiss=".modal-video">&times;</button>
+          </div>
+          <div class="modal-content">
+            <div id="player"></div>
+          </div>
+        </div>
+
+        <div class="modal modal-image">
+          <div class="modal-header">
+            <button type="button" class="close" data-modal-dimiss=".modal-image">&times;</button>
+          </div>
+          <div class="modal-content">
+            <div class="image-detail"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        
+      </div>
+    </footer>
 
     <!-- build:js scripts/vendor.js -->
     <script src="scripts/ui-kit.js"></script>

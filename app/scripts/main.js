@@ -97,7 +97,6 @@ function loadedSection01() {
 function loadedSection03() {
 
   $('.section-03 .slick-01').slick({
-    initialSlide: 2,
     fade: true,
     dots: true,
     arrows: true,
@@ -107,7 +106,6 @@ function loadedSection03() {
   })
 
   $('.section-03 .slick-02').slick({
-    initialSlide: 2,
     dots: false,
     arrows: false,
     variableWidth: true,
@@ -119,12 +117,6 @@ function loadedSection03() {
     popovers.forEach(function(popover) {
       popover.classList.remove('show')
     })
-
-    let dot = document.querySelector('.section-03 svg .dot-active-after-view')
-    if(dot !== null) {
-      dot.classList.add('dot-active')
-      dot.classList.remove('dot-active-after-view')
-    }
   })
 
   $('.section-03 .slick-01').on('afterChange', function(event, slick, currentSlide, nextSlide) {
@@ -152,12 +144,7 @@ function loadedSection03() {
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
 
-      if(dot.classList.contains('dot-active-after-view') === true) {
-        dot.classList.add('dot-active')
-        dot.classList.remove('dot-active-after-view')
-        uiKit.Modal.show('.modal-video')
-      }
-      else if(dot.classList.contains('dot-active') === false) {
+      if(dot.classList.contains('dot-active') === false) {
         let slickIndex = dot.dataset.slickIndex
         $('.section-03 .slick-01').slick('slickGoTo', slickIndex)
       }
