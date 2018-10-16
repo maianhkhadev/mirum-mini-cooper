@@ -2,7 +2,7 @@
 
   .section-07 {
     position: relative;
-    
+
     .tab-links {
       border: unset;
       margin-bottom: 1.25rem;
@@ -182,24 +182,32 @@
         .slide-01 {
 
           .dot {
-            top: 65%;
-            left: 65%;
+            top: 68%;
+            left: 50%;
+
+            @media screen and (max-width: 600px) {
+              top: 66%;
+            }
           }
         }
 
         .slide-03 {
 
           .dot {
-            top: 55%;
-            left: 45%;
+            top: 57%;
+            left: 55%;
           }
         }
 
         .slide-04 {
 
           .dot {
-            top: 75%;
-            left: 50%;
+            top: 77%;
+            left: 37%;
+
+            @media screen and (max-width: 600px) {
+              top: 75%;
+            }
           }
         }
       }
