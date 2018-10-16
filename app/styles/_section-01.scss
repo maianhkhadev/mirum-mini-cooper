@@ -1,8 +1,11 @@
 #page-home {
 
   .section-01 {
-    padding-top: 2rem;
-    
+
+    @media screen and (max-width: 600px) {
+      padding-top: 0;
+    }
+
     .offset-xl-1 {
       margin-right: 8.333333%;
     }

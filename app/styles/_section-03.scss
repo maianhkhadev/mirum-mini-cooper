@@ -2,7 +2,7 @@
 
   .section-03 {
     position: relative;
-    
+
     .slick-01 {
       margin-bottom: 2.5rem;
 
@@ -88,10 +88,6 @@
     }
 
     .slick-02 {
-
-      @media screen and (max-width: 1200px) {
-        display: none;
-      }
 
       img {
         border: 0.0625rem solid #e0e0e0;
