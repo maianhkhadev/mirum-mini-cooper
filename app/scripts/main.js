@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     easing: 'ease-in',
     anchorPlacement: 'bottom'
   })
+})
 
+function loadAssets() {
   let images = [
     './images/page-home/section-06/car-01.png',
     './images/page-home/section-06/car-02.png',
@@ -48,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
     promises.push(promise)
   })
 
-  return Promise.all(promises)
-})
+  Promise.all(promises)
+}
 
 function loadedSection01() {
 
